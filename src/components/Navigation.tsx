@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { 
   Heart, 
   Menu, 
@@ -60,8 +61,9 @@ export const Navigation = () => {
           })}
         </div>
 
-        {/* Auth Buttons */}
+        {/* Theme Toggle & Auth Buttons */}
         <div className="hidden md:flex items-center space-x-2">
+          <ThemeToggle />
           <Button variant="ghost" size="sm">
             <Shield className="mr-2 h-4 w-4" />
             Anonymous Login
@@ -107,6 +109,10 @@ export const Navigation = () => {
               );
             })}
             <div className="pt-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
               <Button variant="outline" size="sm" className="w-full">
                 <Shield className="mr-2 h-4 w-4" />
                 Anonymous Login
